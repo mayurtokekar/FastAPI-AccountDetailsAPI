@@ -1,7 +1,10 @@
 from typing import Dict, List, Optional
 from threading import Lock
 
+from logging_config import get_logger
 from models import Account, AccountCreate
+
+logger = get_logger("account_details.db")
 
 
 class AccountDatabase:
@@ -45,6 +48,14 @@ class AccountDatabase:
             )
             self._accounts[account.id] = account
             self._next_id += 1
+            logger.info(
+                "account.persisted",
+                extra={
+                    "account_id": account.id,
+                    "account_type": account.account_type,
+                    "email_domain": account.email.split("@", 1)[-1],
+                },
+            )
             return account
 
     def get(self, account_id: int) -> Optional[Account]:
