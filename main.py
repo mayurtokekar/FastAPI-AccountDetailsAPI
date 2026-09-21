@@ -4,7 +4,7 @@ import uuid
 from contextvars import ContextVar
 from typing import Awaitable, Callable, Dict, List, Optional
 
-from fastapi import FastAPI, HTTPException, Query, Request, status
+from fastapi import FastAPI, HTTPException, Query, Request, Response, status
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
 

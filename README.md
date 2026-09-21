@@ -4,10 +4,27 @@ A simple FastAPI service to fetch and manage account details.
 
 ## Setup
 
+### macOS / Linux
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
+```
+
+### Windows (PowerShell)
+
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+If `python` or `py` is not recognized, install Python 3.12 from python.org and ensure the launcher is enabled, or call the full interpreter path directly, for example:
+
+```powershell
+& "C:\Users\A\AppData\Local\Programs\Python\Python312\python.exe" -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
 ## Run
